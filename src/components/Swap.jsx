@@ -1,3 +1,4 @@
+//note on branch
 import React, { useState } from "react";
 import Inventory from "./Inventory"
 import PlayerASwap from "./PlayerASwap";
@@ -78,8 +79,7 @@ function Swap(){
                     </Board> */}
                 </div>
             </div>
-            {/* <Modal title="Basic Modal" visible="true" onOk={handleOk} onCancel={handleCancel}> */}
-            <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} className="nft-modal">
+            <Modal title={modalData.symbol} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} className="nft-modal">
                 <p>{modalData.symbol}</p>
                 <p>Token ID: {modalData.token_id}</p>
                 <p>Token Address:{modalData.address}</p>
