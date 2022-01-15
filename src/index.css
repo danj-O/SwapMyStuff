@@ -31,7 +31,8 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background-color: white;
+  background: #292315;
+
 }
 
 ul[class],
@@ -57,4 +58,161 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+/* -------------------------- */
+.ant-layout-header, .ant-menu, .ant-menu-root{
+  background-color: #292315 !important;
+  border-bottom: none;
+  /* box-shadow: none; */
+}
+
+
+#root > section > div{
+  background: #292315;
+  margin-top: 63px !important;
+}
+.main-container h1{
+  color: white;
+  font-size: 4em;
+  text-align: center;
+}
+.flexbox {
+  display: flex;
+  justify-content: space-around;
+  width: 1300px;
+  /* min-width: 1300px; */
+  /* max-width: 768px; */
+  height: 100vh;
+  overflow: hidden;
+  /* margin: 0 auto; */
+  /* padding: 15px; */
+  background: #292315;
+}
+.left-column{
+  position: relative;
+  width: 650px;
+}
+.right-column{
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  position: relative;
+}
+.right-col-top{
+  position: relative;
+  height: 350px;
+}
+.right-col-bottom{
+  position: relative;
+  height: 350px;
+}
+.right-col-middle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+.right-col-middle input{
+  width: 250px;
+  margin-bottom: 20px;
+}
+.inventory-box{
+  margin-top: 113px;
+  margin-left: 67px;
+  width: 490px;
+  /* height: 790px; */
+  background-color: white;
+}
+.partyA-box{
+  margin-top: 111px;
+  margin-left: 77px;
+  width: 490px;
+  height: 150px;
+  background-color: white;
+}
+.address-box{
+  position: absolute;
+  z-index: 10;
+  top: 20px;
+  left: 135px;
+  color: white;
+}
+.right-column .address-box{
+  top: 35px;
+}
+.inventory{
+  position: absolute;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . . ."
+    ". . . . ."
+    ". . . . ."
+    ". . . . ."
+    ". . . . ."; 
+  /* margin-top: 105px; */
+  /* width: 490px; */
+  height: 490px;
+  /* z-index: 10; */
+}
+.inventory-img{
+  position: absolute;
+  width: 600px;
+  min-width: 600px;
+  height: 651px;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+.partyA{
+  position: absolute;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . . ."
+    ". . . . .";
+    width: 460px;
+    max-width: 460px;
+  height:183px;
+}
+.partyA-img{
+  position: absolute;
+  width: 600px;
+  min-width: 600px;
+  /* height: 651px; */
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+.flexbox .board{
+  z-index: 10;
+  /* display: flex; */
+  /* flex-direction: column; */
+  width: 490px;
+  /* min-width: 300px; */
+  /* background-color: #313131; */
+  /* padding: 15px; */
+  /* margin-top: 97px;
+  margin-left: 40px; */
+  /* margin: 20px 0px; */
+}
+
+.flexbox .board .card {
+  z-index: 15;
+  /* padding: 15px 25px; */
+  width: 77px;
+  height: 77px;
+  background-color: #da6262;
+  cursor: pointer;
+  /* margin: 0px 11px; */
+  border-radius: 5px;
+  overflow: hidden;
 }

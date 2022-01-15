@@ -25,44 +25,44 @@ function NFTBalance() {
   const { data: NFTBalances } = useNFTBalances();
   const { Moralis, chainId } = useMoralis();
   const [visible, setVisibility] = useState(false);
-  // const [receiverToSend, setReceiver] = useState(null);
-  // const [amountToSend, setAmount] = useState(null);
-  // const [nftToSend, setNftToSend] = useState(null);
-  // const [isPending, setIsPending] = useState(false);
+  const [receiverToSend, setReceiver] = useState(null);
+  const [amountToSend, setAmount] = useState(null);
+  const [nftToSend, setNftToSend] = useState(null);
+  const [isPending, setIsPending] = useState(false);
   const { verifyMetadata } = useVerifyMetadata();
 
-  // async function transfer(nft, amount, receiver) {
-  //   const options = {
-  //     type: nft.contract_type,
-  //     tokenId: nft.token_id,
-  //     receiver: receiver,
-  //     contractAddress: nft.token_address,
-  //   };
+  async function transfer(nft, amount, receiver) {
+    const options = {
+      type: nft.contract_type,
+      tokenId: nft.token_id,
+      receiver: receiver,
+      contractAddress: nft.token_address,
+    };
 
-  //   if (options.type === "erc1155") {
-  //     options.amount = amount;
-  //   }
+    if (options.type === "erc1155") {
+      options.amount = amount;
+    }
 
-  //   setIsPending(true);
-  //   await Moralis.transfer(options)
-  //     .then((tx) => {
-  //       console.log(tx);
-  //       setIsPending(false);
-  //     })
-  //     .catch((e) => {
-  //       alert(e.message);
-  //       setIsPending(false);
-  //     });
-  // }
+    setIsPending(true);
+    await Moralis.transfer(options)
+      .then((tx) => {
+        console.log(tx);
+        setIsPending(false);
+      })
+      .catch((e) => {
+        alert(e.message);
+        setIsPending(false);
+      });
+  }
 
-  // const handleTransferClick = (nft) => {
-  //   setNftToSend(nft);
-  //   setVisibility(true);
-  // };
+  const handleTransferClick = (nft) => {
+    setNftToSend(nft);
+    setVisibility(true);
+  };
 
-  // const handleChange = (e) => {
-  //   setAmount(e.target.value);
-  // };
+  const handleChange = (e) => {
+    setAmount(e.target.value);
+  };
 
   console.log("NFTBalances", NFTBalances);
   return (
@@ -83,12 +83,12 @@ function NFTBalance() {
                         onClick={() => window.open(`${getExplorer(chainId)}address/${nft.token_address}`, "_blank")}
                       />
                     </Tooltip>,
-                    // <Tooltip title="Transfer NFT">
-                    //   <SendOutlined onClick={() => handleTransferClick(nft)} />
-                    // </Tooltip>,
-                    // <Tooltip title="Sell On OpenSea">
-                    //   <ShoppingCartOutlined onClick={() => alert("OPENSEA INTEGRATION COMING!")} />
-                    // </Tooltip>,
+                    <Tooltip title="Transfer NFT">
+                      <SendOutlined onClick={() => handleTransferClick(nft)} />
+                    </Tooltip>,
+                    <Tooltip title="Sell On OpenSea">
+                      <ShoppingCartOutlined onClick={() => alert("OPENSEA INTEGRATION COMING!")} />
+                    </Tooltip>,
                   ]}
                   style={{ width: 240, border: "2px solid #e7eaf3" }}
                   cover={
@@ -109,18 +109,17 @@ function NFTBalance() {
         </Skeleton>
       </div>
       <Modal
-        // title={`Transfer ${nftToSend?.name || "NFT"}`}
+        title={`Transfer ${nftToSend?.name || "NFT"}`}
         visible={visible}
-        // onCancel={() => setVisibility(false)}
-        // onOk={() => transfer(nftToSend, amountToSend, receiverToSend)}
-        // confirmLoading={isPending}
-        // okText="Send"
+        onCancel={() => setVisibility(false)}
+        onOk={() => transfer(nftToSend, amountToSend, receiverToSend)}
+        confirmLoading={isPending}
+        okText="Send"
       >
-        a modal
-        {/* <AddressInput autoFocus placeholder="Receiver" onChange={setReceiver} />
+        <AddressInput autoFocus placeholder="Receiver" onChange={setReceiver} />
         {nftToSend && nftToSend.contract_type === "erc1155" && (
-          <Input placeholder="amount to send" onChange={(e) => handleChange(e)} /> */}
-        {/* )} */}
+          <Input placeholder="amount to send" onChange={(e) => handleChange(e)} />
+        )}
       </Modal>
     </div>
   );
