@@ -54,9 +54,10 @@ contract SwapMyStuff is IERC721Receiver {
 
     /// Alice can adjust the swapEndTime because she is the BoSs.
     /// She sends in a new time in seconds to add more time to the swapClock.
-    function aliceAdjustSwapEndTime(uint _swapTime) {
+    function aliceAdjustSwapEndTime(uint _swapTime) public {
         // probably want to write a modifier called onlyAlice later
         require(msg.sender == alice);
+        ended = false;
         swapEndTime = block.timestamp + _swapTime;
     }
 
@@ -134,6 +135,7 @@ contract SwapMyStuff is IERC721Receiver {
 
         // 2. Effects
         ended = true;
+        // do we also emit the tokenIDs?
         emit weSwapped(bob, bobsNFT, honeyPot, alicesNFT);
 
         // 3. Interaction
