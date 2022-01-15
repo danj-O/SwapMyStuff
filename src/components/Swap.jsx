@@ -3,32 +3,53 @@ import Inventory from "./Inventory"
 import PlayerASwap from "./PlayerASwap";
 import PlayerBSwap from "./PlayerBSwap"
 // import Blokie from "components/Blockie"
-import { Button, Input } from 'antd'
+import { Input, Modal } from 'antd'
 
 import { useMoralis, useNFTBalances } from "react-moralis";
-import { useVerifyMetadata } from "hooks/useVerifyMetadata";
+// import { useVerifyMetadata } from "hooks/useVerifyMetadata";
 
 
 function Swap(){
     const { data: NFTBalances } = useNFTBalances();
-    const { Moralis, chainId } = useMoralis();
-    const [visible, setVisibility] = useState(false);
+    // const { Moralis, chainId } = useMoralis();
+    // const [visible, setVisibility] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [modalData, setModalData] = useState({});
 
     // const { verifyMetadata } = useVerifyMetadata();
-    console.log("NFTBalances", NFTBalances);
+    // console.log("NFTBalances", NFTBalances);
 
+    const showModal = (el) => {
+        setIsModalVisible(true);
+        setModalData({
+            address: el.dataset.address,
+            token_id: el.dataset.token_id,
+            image: el.dataset.image,
+            symbol: el.dataset.symbol,
+            attributes: el.dataset.attributes,
+        })
+        // console.log("swap show modal el", modalEl.address)
+      };
+    
+      const handleOk = () => {
+        setIsModalVisible(false);
+      };
+    
+      const handleCancel = () => {
+        setIsModalVisible(false);
+      };
 
 
 
     return(
         <div className="main-container">
             <div>
-                <h1>The Swap You Needed</h1>
+                <h1>SwapMyStuff</h1>
             </div>
             <div className="flexbox">
                 <div className="left-column">
                     {/* INVENTORY */}
-                    <Inventory data={NFTBalances}/>
+                    <Inventory data={NFTBalances} showModal={showModal}/>
                 </div>
 
                 <div className="right-column">
@@ -56,7 +77,15 @@ function Swap(){
                     </Board> */}
                 </div>
             </div>
-
+            {/* <Modal title="Basic Modal" visible="true" onOk={handleOk} onCancel={handleCancel}> */}
+            <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} className="nft-modal">
+                {/* <p>{modalEl.dataset.address}</p> */}
+                <p>{modalData.address}</p>
+                <p>{modalData.token_id}</p>
+                <p>{modalData.image}</p>
+                <p>{modalData.symbol}</p>
+                <p>{modalData.attributes}</p>
+            </Modal>
         </div>
     )
 }
