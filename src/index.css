@@ -136,12 +136,13 @@ select {
 .address-box{
   position: absolute;
   z-index: 10;
-  top: 20px;
+  top: 16px;
   left: 135px;
   color: white;
+  text-align: center;
 }
 .right-column .address-box{
-  top: 35px;
+  top: 25px;
 }
 .inventory{
   position: absolute;

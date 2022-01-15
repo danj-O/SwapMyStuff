@@ -13,6 +13,7 @@ function Inventory(props) {
         <div className='inventory-box'>
             <div className="address-box">
                 <Address />
+                <p>INVENTORY</p>
             </div>
             <Board id="board-1" className="board inventory">
                 {nfts?.result && nfts.result.map((nft, index) => {

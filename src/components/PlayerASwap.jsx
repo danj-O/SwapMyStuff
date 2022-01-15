@@ -13,6 +13,7 @@ function PlayerASwap(props) {
         <div className='partyA-box'>
             <div className="address-box">
                 <Address />
+                <p>PLAYER A OFFERING</p>
             </div>
             <Board id="board-2" className="board partyA">
                 {nfts?.result && nfts.result.map((nft, index) => {

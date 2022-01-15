@@ -29,7 +29,8 @@ function Card(props) {
             data-address={props.address}
             data-token_id={props.nft.token_id}
             data-img-url={props.nft.image}            
-            data-symbol={props.nft.symbol}            
+            data-symbol={props.nft.symbol}
+            data-token_uri={props.nft.token_uri}
             data-attributes={JSON.stringify(props.nft.metadata.attributes)}
         >
             {props.children}

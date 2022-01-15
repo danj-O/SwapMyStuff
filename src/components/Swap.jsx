@@ -17,7 +17,7 @@ function Swap(){
     const [modalData, setModalData] = useState({});
 
     // const { verifyMetadata } = useVerifyMetadata();
-    // console.log("NFTBalances", NFTBalances);
+    console.log("NFTBalances", NFTBalances);
 
     const showModal = (el) => {
         setIsModalVisible(true);
@@ -26,6 +26,7 @@ function Swap(){
             token_id: el.dataset.token_id,
             image: el.dataset.image,
             symbol: el.dataset.symbol,
+            token_uri: el.dataset.token_uri,
             attributes: el.dataset.attributes,
         })
         // console.log("swap show modal el", modalEl.address)
@@ -79,12 +80,12 @@ function Swap(){
             </div>
             {/* <Modal title="Basic Modal" visible="true" onOk={handleOk} onCancel={handleCancel}> */}
             <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} className="nft-modal">
-                {/* <p>{modalEl.dataset.address}</p> */}
-                <p>{modalData.address}</p>
-                <p>{modalData.token_id}</p>
-                <p>{modalData.image}</p>
                 <p>{modalData.symbol}</p>
-                <p>{modalData.attributes}</p>
+                <p>Token ID: {modalData.token_id}</p>
+                <p>Token Address:{modalData.address}</p>
+                <p>Image URL: {modalData.image}</p>
+                <p>Token URI: {modalData.token_uri}</p>
+                <p>Attributes: {modalData.attributes}</p>
             </Modal>
         </div>
     )
