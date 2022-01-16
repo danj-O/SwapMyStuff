@@ -13,7 +13,7 @@ import { useMoralis, useNFTBalances } from "react-moralis";
 // import { useVerifyMetadata } from "hooks/useVerifyMetadata";
 
 
-function Swap(){
+function MyContracts(){
     const { data: NFTBalances } = useNFTBalances();
   const { chainId } = useMoralis();
     // const { Moralis, chainId } = useMoralis();
@@ -60,9 +60,9 @@ function Swap(){
     return(
         <div className="main-container">
             <div className="header-text">
-                <h1>SwapMyStuff</h1>
-                <Input placeholder="ENTER CONTRACT ADDRES HERE TO SEE ONGOING SWAP" />
-                <Button>FIND SWAP CONTRACT</Button>
+                <h1>MY OPEN CONTRACTS</h1>
+                {/* <Input placeholder="ENTER CONTRACT ADDRES HERE TO SEE ONGOING SWAP" />
+                <Button>FIND SWAP CONTRACT</Button> */}
             </div>
             <div className="flexbox">
                 <div className="left-column">
@@ -71,28 +71,15 @@ function Swap(){
                 </div>
 
                 <div className="right-column">
-                    <div className="right-col-top">
-                        {/* PLAYER A SWAP ITEM BOX */}
-                        <PlayerASwap />
+                    <div className="my-contracts-box">
+                        <ul>
+                            <li>jkfhgvk</li>
+                            <li>vcxvbv</li>
+                            <li>bcvbcvb</li>
+                            <li>bcvbcvb</li>
+                            <li>bcvbccbc</li>
+                        </ul>
                     </div>
-
-                    <div className="right-col-middle">
-                        <Input placeholder="ENTER PARTY B ADRESS HERE" />
-                        {/* when this button is pressed, it should collect the nft data from inside partyA's(and B?) to send to contract  */}
-                        <SwapButton handleSwapClick={handleSwapClick}>CREATE A SWAP CONTRACT/PROPOSE BID</SwapButton>
-                    </div>
-
-                    <div className="right-col-bottom">
-                        {/* PLAYER B PROPOSED SWAP ITEM BOX */}
-                        <PlayerBSwap />
-                    </div>
-
-
-                    {/* <Board id="board-3" className="board">
-                        <Card id="card-9" className="card" draggable="false">
-                            <p>BYEEE</p>
-                        </Card>
-                    </Board> */}
                 </div>
             </div>
             <Modal title={modalData.symbol} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} className="nft-modal">
@@ -108,4 +95,4 @@ function Swap(){
     )
 }
 
-export default Swap;
+export default MyContracts;
