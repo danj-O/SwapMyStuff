@@ -36,12 +36,21 @@ function MenuItems() {
       <Menu.Item key="/erc20transfers">
         <NavLink to="/erc20transfers">💸 Transfers</NavLink>
       </Menu.Item> */}
-      <Menu.Item key="/Swap">
-        <NavLink to="/Swap">🚀 NFT SWAP🚀 </NavLink>
+      <Menu.Item key="/CreateSwap">
+        <NavLink to="/CreateSwap">🚀 CREATE NEW SWAP🚀 </NavLink>
       </Menu.Item>
-      <Menu.Item key="/nftBalance">
+      <Menu.Item key="/FindSwap">
+        <NavLink to="/FindSwap">🚀 FIND SWAP🚀 </NavLink>
+      </Menu.Item>
+      <Menu.Item key="/MyContracts">
+        <NavLink to="/MyContracts">🚀 MY SWAP CONTRACTS🚀 </NavLink>
+      </Menu.Item>
+      {/* <Menu.Item key="/Swap">
+        <NavLink to="/Swap">🚀 SWAP  </NavLink>
+      </Menu.Item> */}
+      {/* <Menu.Item key="/nftBalance">
         <NavLink to="/nftBalance">MY NFTs</NavLink>
-      </Menu.Item>
+      </Menu.Item> */}
       {/* <Menu.Item key="/LayoutTest">
         <NavLink to="/LayoutTest">LAYOUT</NavLink>
       </Menu.Item> */}

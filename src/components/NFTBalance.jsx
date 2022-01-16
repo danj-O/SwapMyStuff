@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useMoralis, useNFTBalances } from "react-moralis";
-import { Card, Image, Tooltip, Modal, Input, Skeleton } from "antd";
-import { FileSearchOutlined, SendOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { Card, Image, Tooltip, Modal, Skeleton } from "antd";
+import { FileSearchOutlined} from "@ant-design/icons";
 import { getExplorer } from "helpers/networks";
-import AddressInput from "./AddressInput";
+// import AddressInput from "./AddressInput";
 import { useVerifyMetadata } from "hooks/useVerifyMetadata";
 
 const { Meta } = Card;
@@ -23,7 +23,7 @@ const styles = {
 
 function NFTBalance() {
   const { data: NFTBalances } = useNFTBalances();
-  const { Moralis, chainId } = useMoralis();
+  const { chainId } = useMoralis();
   const [visible, setVisibility] = useState(false);
   // const [receiverToSend, setReceiver] = useState(null);
   // const [amountToSend, setAmount] = useState(null);

@@ -59,6 +59,12 @@ textarea,
 select {
   font: inherit;
 }
+.ant-menu-horizontal > .ant-menu-item a{
+  color: white;
+}
+#root > section > header > div:nth-child(4) > div:nth-child(2){
+  color: #21bf96;
+}
 
 /* -------------------------- */
 .ant-layout-header, .ant-menu, .ant-menu-root{
@@ -75,6 +81,10 @@ select {
 .main-container h1{
   color: white;
   font-size: 4em;
+  text-align: center;
+}
+.header-text p {
+  color: white;
   text-align: center;
 }
 .flexbox {
@@ -113,11 +123,15 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  /* height: 80px; */
 }
 .right-col-middle input{
-  width: 250px;
+  width: 400px;
   margin-bottom: 20px;
+}
+.description{
+  color: white;
+  padding: 20px;
 }
 .inventory-box{
   margin-top: 113px;
@@ -136,12 +150,13 @@ select {
 .address-box{
   position: absolute;
   z-index: 10;
-  top: 20px;
+  top: 16px;
   left: 135px;
   color: white;
+  text-align: center;
 }
 .right-column .address-box{
-  top: 35px;
+  top: 25px;
 }
 .inventory{
   position: absolute;
@@ -215,4 +230,15 @@ select {
   /* margin: 0px 11px; */
   border-radius: 5px;
   overflow: hidden;
+}
+
+/* ------------ */
+.swap-button{
+  background-color: white;
+}
+
+
+/* MYCONTRACTS */
+.my-contracts-box{
+  color: white;
 }

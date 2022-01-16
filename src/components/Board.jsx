@@ -1,3 +1,4 @@
+import { BoxPlotFilled } from "@ant-design/icons";
 import React from "react";
 
 function Board(props){
@@ -11,6 +12,12 @@ function Board(props){
         card.style.display = 'block';
 
         e.target.appendChild(card);
+
+        // if dropped place is in the to be traded Box, add to state with function passed down
+        // console.log('e.traget', e.target)
+        // if(e.target.id == "board-2"){
+        //     console.log("yayyy, board 2")
+        // }
     }
 
     const dragOver = e => {

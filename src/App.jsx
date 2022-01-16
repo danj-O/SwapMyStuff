@@ -7,9 +7,9 @@ import Chains from "components/Chains";
 // import ERC20Balance from "components/ERC20Balance";
 // import ERC20Transfers from "components/ERC20Transfers";
 // import DEX from "components/DEX";
-import NFTBalance from "components/NFTBalance";
+// import NFTBalance from "components/NFTBalance";
 import Swap from "components/Swap";
-import LayoutTest from "components/LayoutTest";
+// import LayoutTest from "components/LayoutTest";
 // import Wallet from "components/Wallet";
 import { Layout } from "antd";
 import "antd/dist/antd.css";
@@ -17,9 +17,13 @@ import NativeBalance from "components/NativeBalance";
 import "./style.css";
 // import QuickStart from "components/QuickStart";
 // import Contract from "components/Contract/Contract";
-import Text from "antd/lib/typography/Text";
+// import Text from "antd/lib/typography/Text";
 // import Ramper from "components/Ramper";
 import MenuItems from "./components/MenuItems";
+import CreateSwap from "components/CreateSwap";
+import FindSwap from "components/FindSwap";
+import MyContracts from "components/MyContracts";
+
 const { Header, Footer } = Layout;
 
 const styles = {
@@ -110,20 +114,26 @@ const App = ({ isServerInfo }) => {
             <Route path="/erc20transfers">
               <ERC20Transfers />
             </Route> */}
-            <Route path="/nftBalance">
+            {/* <Route path="/nftBalance">
               <NFTBalance />
-            </Route>
+            </Route> */}
             <Route path="/Swap">
               <Swap />
             </Route>
-            <Route path="/LayoutTest">
-              <LayoutTest />
+            <Route path="/CreateSwap">
+              <CreateSwap />
+            </Route>
+            <Route path="/FindSwap">
+              <FindSwap />
+            </Route>
+            <Route path="/MyContracts">
+              <MyContracts />
             </Route>
             {/* <Route path="/contract">
               <Contract />
             </Route> */}
             <Route path="/">
-              <Redirect to="/Swap" />
+              <Redirect to="/CreateSwap" />
             </Route>
             {/* <Route path="/ethereum-boilerplate">
               <Redirect to="/quickstart" />
