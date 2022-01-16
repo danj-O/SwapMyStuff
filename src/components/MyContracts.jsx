@@ -44,10 +44,6 @@ function MyContracts(){
         setIsModalVisible(false);
       };
 
-      const handleSwapClick = () => {
-          // address payable alice, address aliceNFT, uint swapEndTime
-          // send to contract
-      }
       const handleBlockExplorerClick = () => {
           const blockURL = `${getExplorer(chainId)}address/${modalData.address}?a=${modalData.token_id}`
           console.log(blockURL)

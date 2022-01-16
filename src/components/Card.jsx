@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import { Modal } from 'antd'
+import React from 'react'
 
 function Card(props) {
     const dragStart = e => {

@@ -8,7 +8,7 @@ import Chains from "components/Chains";
 // import ERC20Transfers from "components/ERC20Transfers";
 // import DEX from "components/DEX";
 // import NFTBalance from "components/NFTBalance";
-import Swap from "components/Swap";
+// import Swap from "components/Swap";
 // import LayoutTest from "components/LayoutTest";
 // import Wallet from "components/Wallet";
 import { Layout } from "antd";

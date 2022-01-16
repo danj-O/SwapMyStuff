@@ -29,6 +29,7 @@ function FindSwap(){
     const [swapContract, setSwapContract] = useState();
 
     const { data, error, isLoading } = useMoralisQuery("bids"); //query event
+    console.log(data,error,isLoading)
 
     // const { verifyMetadata } = useVerifyMetadata();
     // console.log("NFTBalances", NFTBalances);
@@ -90,6 +91,7 @@ function FindSwap(){
 
         if(searchFound){ 
             setSwapContract(searchText) //save the contract
+            console.log(swapContract)
         }
         setOtherPlayerNFTs({ //NEED THIS TO POPULATE OTHER PLAYERS NFTS UP FOR TRADE
             //get data from chain and save to state
