@@ -106,6 +106,7 @@ const App = ({ isServerInfo }) => {
       </Router>
       <Footer style={{ textAlign: "center" }}>
         <p>Alice and Bob's SwapShop</p>
+        <a href="https://github.com/danj-O/SwapMyStuff">Check the repo and contribute!</a>
         
       </Footer>
     </Layout>

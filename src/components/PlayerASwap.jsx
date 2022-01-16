@@ -12,7 +12,7 @@ function PlayerASwap(props) {
     return (
         <div className='partyA-box'>
             <div className="address-box">
-                <Address />
+                {/* <Address /> */}
                 <p>NFTs YOU WANT TO SWAP</p>
             </div>
             <Board id="board-2" className="board partyA">
