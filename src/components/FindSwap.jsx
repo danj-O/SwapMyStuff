@@ -11,13 +11,13 @@ import {getNFTsForSwap} from 'helpers/DomHelpers'
 
 
 
-import { useMoralis, useNFTBalances, useWeb3ExecuteFunction } from "react-moralis";
+import { useMoralis, useMoralisQuery, useNFTBalances, useWeb3ExecuteFunction } from "react-moralis";
 // import { useVerifyMetadata } from "hooks/useVerifyMetadata";
 
 
 function FindSwap(){
     const { data: NFTBalances } = useNFTBalances();
-    const { Moralis, chainId } = useMoralis();
+    const { chainId } = useMoralis();
     const contractProcessor = useWeb3ExecuteFunction() //for executing sc funcs
     // const [visible, setVisibility] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -27,6 +27,8 @@ function FindSwap(){
     // const [searchData, setSearchData] = useState();
     const [otherPlayerNFTs, setOtherPlayerNFTs] = useState();
     const [swapContract, setSwapContract] = useState();
+
+    const { data, error, isLoading } = useMoralisQuery("bids"); //query event
 
     // const { verifyMetadata } = useVerifyMetadata();
     // console.log("NFTBalances", NFTBalances);
@@ -54,7 +56,7 @@ function FindSwap(){
       const interactWithContract = async(NFTs) => {
         let options = {
             contractAddress: "???", //where we get this bad boy
-            functionName: "the functionorino in solidityyy",
+            functionName: "bid",
             abi:[],
             params: {
                     NFTAddress: NFTs[0].address,
@@ -73,7 +75,7 @@ function FindSwap(){
       }
 
       const handleBlockExplorerClick = () => {
-          const blockURL = `${getExplorer(chainId)}address/${modalData.address}?a=${modalData.token_id}`
+          const blockURL = `${getExplorer(chainId)}address/${modalData.address}`
           console.log(blockURL)
           window.open(blockURL, "_blank")
       }
@@ -81,6 +83,8 @@ function FindSwap(){
       const handleSearchClick = () => {
         const searchText = document.querySelector('#search-input').value //need to somehow query for this
         console.log("search clicked", searchText)
+
+        //use data from moralis query to display alices nfts she wants to swap
 
         setSearchFound(true); //this will be conditional if a contract is found or not!!!!
 
