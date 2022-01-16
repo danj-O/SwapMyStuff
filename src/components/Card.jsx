@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import { Modal } from 'antd'
+import React from 'react'
 
 function Card(props) {
     const dragStart = e => {
@@ -31,7 +30,7 @@ function Card(props) {
             data-img-url={props.nft.image}            
             data-symbol={props.nft.symbol}
             data-token_uri={props.nft.token_uri}
-            data-attributes={JSON.stringify(props.nft.metadata.attributes)}
+            data-attributes={JSON.stringify(props.nft.metadata?.attributes)}
         >
             {props.children}
             {/* <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} className="nft-modal">

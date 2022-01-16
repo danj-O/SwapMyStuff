@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import Inventory from "./Inventory"
 import PlayerASwap from "./PlayerASwap";
-import PlayerBSwap from "./PlayerBSwap";
+// import PlayerBSwap from "./PlayerBSwap";
 import SwapButton from "./SwapButton";
 // import Blokie from "components/Blockie"
-import { Input, Modal, Button } from 'antd'
+import { Input, Modal } from 'antd'
 import { getExplorer } from "helpers/networks";
 import {getNFTsForSwap} from 'helpers/DomHelpers'
 
@@ -16,7 +16,7 @@ import { useMoralis, useNFTBalances, useWeb3ExecuteFunction } from "react-morali
 
 function CreateSwap(){ 
     const { data: NFTBalances } = useNFTBalances();
-    const { Moralis, chainId } = useMoralis();
+    const { chainId } = useMoralis();
     const contractProcessor = useWeb3ExecuteFunction() //for executing sc funcs
     // const [visible, setVisibility] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -25,7 +25,7 @@ function CreateSwap(){
     const [isNoInputs, setIsNoInputs] = useState(); //has the user filled req fields?
 
     // const { verifyMetadata } = useVerifyMetadata();
-    // console.log("NFTBalances", NFTBalances);
+    console.log("NFTBalances", NFTBalances);
 
     const showModal = (el) => {
         setIsModalVisible(true);
