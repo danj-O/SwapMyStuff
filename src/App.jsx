@@ -8,7 +8,7 @@ import Chains from "components/Chains";
 // import ERC20Transfers from "components/ERC20Transfers";
 // import DEX from "components/DEX";
 // import NFTBalance from "components/NFTBalance";
-import Swap from "components/Swap";
+// import Swap from "components/Swap";
 // import LayoutTest from "components/LayoutTest";
 // import Wallet from "components/Wallet";
 import { Layout } from "antd";
@@ -86,40 +86,6 @@ const App = ({ isServerInfo }) => {
 
         <div style={styles.content}>
           <Switch>
-            {/* <Route exact path="/quickstart">
-              <QuickStart isServerInfo={isServerInfo} />
-            </Route>
-            <Route path="/wallet">
-              <Wallet />
-            </Route>
-            <Route path="/1inch">
-              <Tabs defaultActiveKey="1" style={{ alignItems: "center" }}>
-                <Tabs.TabPane tab={<span>Ethereum</span>} key="1">
-                  <DEX chain="eth" />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab={<span>Binance Smart Chain</span>} key="2">
-                  <DEX chain="bsc" />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab={<span>Polygon</span>} key="3">
-                  <DEX chain="polygon" />
-                </Tabs.TabPane>
-              </Tabs>
-            </Route>
-            <Route path="/erc20balance">
-              <ERC20Balance />
-            </Route>
-            <Route path="/onramp">
-              <Ramper />
-            </Route>
-            <Route path="/erc20transfers">
-              <ERC20Transfers />
-            </Route> */}
-            {/* <Route path="/nftBalance">
-              <NFTBalance />
-            </Route> */}
-            <Route path="/Swap">
-              <Swap />
-            </Route>
             <Route path="/CreateSwap">
               <CreateSwap />
             </Route>
@@ -129,15 +95,9 @@ const App = ({ isServerInfo }) => {
             <Route path="/MyContracts">
               <MyContracts />
             </Route>
-            {/* <Route path="/contract">
-              <Contract />
-            </Route> */}
             <Route path="/">
               <Redirect to="/CreateSwap" />
             </Route>
-            {/* <Route path="/ethereum-boilerplate">
-              <Redirect to="/quickstart" />
-            </Route> */}
             <Route path="/nonauthenticated">
               <>Please login using the "Authenticate" button</>
             </Route>
@@ -145,31 +105,9 @@ const App = ({ isServerInfo }) => {
         </div>
       </Router>
       <Footer style={{ textAlign: "center" }}>
-        {/* <Text style={{ display: "block" }}>
-          ⭐️ Please star this{" "}
-          <a href="https://github.com/ethereum-boilerplate/ethereum-boilerplate/" target="_blank" rel="noopener noreferrer">
-            boilerplate
-          </a>
-          , every star makes us very happy!
-        </Text>
-
-        <Text style={{ display: "block" }}>
-          🙋 You have questions? Ask them on the {""}
-          <a target="_blank" rel="noopener noreferrer" href="https://forum.moralis.io/t/ethereum-boilerplate-questions/3951/29">
-            Moralis forum
-          </a>
-        </Text>
-
-        <Text style={{ display: "block" }}>
-          📖 Read more about{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://moralis.io?utm_source=boilerplatehosted&utm_medium=todo&utm_campaign=ethereum-boilerplat"
-          >
-            Moralis
-          </a>
-        </Text> */}
+        <p>Alice and Bob's SwapShop</p>
+        <a href="https://github.com/danj-O/SwapMyStuff">Check the repo and contribute!</a>
+        
       </Footer>
     </Layout>
   );

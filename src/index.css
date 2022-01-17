@@ -82,10 +82,19 @@ select {
   color: white;
   font-size: 4em;
   text-align: center;
+}.header-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 500px; */
 }
 .header-text p {
   color: white;
   text-align: center;
+}
+.header-text input{
+  width: 500px;
+  margin: 15px;
 }
 .flexbox {
   display: flex;
@@ -149,11 +158,15 @@ select {
 }
 .address-box{
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   top: 16px;
   left: 135px;
   color: white;
   text-align: center;
+}
+.partyA-box .address-box{
+  left: 215px;
+  padding-top: 18px;
 }
 .right-column .address-box{
   top: 25px;
@@ -208,7 +221,7 @@ select {
 }
 
 .flexbox .board{
-  z-index: 10;
+  z-index: 1;
   /* display: flex; */
   /* flex-direction: column; */
   width: 490px;

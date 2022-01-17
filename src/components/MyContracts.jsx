@@ -1,11 +1,11 @@
 //note on branch
 import React, { useState } from "react";
 import Inventory from "./Inventory"
-import PlayerASwap from "./PlayerASwap";
-import PlayerBSwap from "./PlayerBSwap";
-import SwapButton from "./SwapButton";
+// import PlayerASwap from "./PlayerASwap";
+// import PlayerBSwap from "./PlayerBSwap";
+// import SwapButton from "./SwapButton";
 // import Blokie from "components/Blockie"
-import { Input, Modal, Button } from 'antd'
+import { Modal } from 'antd'
 import { getExplorer } from "helpers/networks";
 
 
@@ -20,8 +20,6 @@ function MyContracts(){
     // const [visible, setVisibility] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [modalData, setModalData] = useState({});
-    const [aliceNFTs, setAliceNFTs] = useState({});
-
     // const { verifyMetadata } = useVerifyMetadata();
     console.log("NFTBalances", NFTBalances);
 
@@ -46,10 +44,6 @@ function MyContracts(){
         setIsModalVisible(false);
       };
 
-      const handleSwapClick = () => {
-          // address payable alice, address aliceNFT, uint swapEndTime
-          // send to contract
-      }
       const handleBlockExplorerClick = () => {
           const blockURL = `${getExplorer(chainId)}address/${modalData.address}?a=${modalData.token_id}`
           console.log(blockURL)

@@ -12,7 +12,7 @@ function PlayerASwap(props) {
     return (
         <div className='partyA-box'>
             <div className="address-box">
-                <Address />
+                {/* <Address /> */}
                 <p>PARTY B OFFER</p>
             </div>
             <Board id="board-1" className="board partyA">
